@@ -17,6 +17,12 @@ FAVICON = (
     "%3Cpolygon points='0,9 24,0 24,24 0,24' fill='%23131311'/%3E%3C/svg%3E"
 )
 
+INSTAGRAM = "https://www.instagram.com/hildur_isdal/"
+LINKEDIN = "https://www.linkedin.com/in/hildur-%C3%ADsdal-316766318/"
+MBL_LAUGARDALUR = "https://www.mbl.is/smartland/heimili/2025/11/18/hildur_hannadi_storkostlegt_eldhus_i_reykjavik/"
+MBL_MOSFELLSBAER = "https://www.mbl.is/smartland/heimili/2025/02/23/bogadreginn_tangi_kom_i_stadinn_fyrir_eyju/"
+DISTRICTHIVE = "https://districthive.com/prospectus_iceland.html"
+
 
 def head(title, desc, p):
     return f"""<!DOCTYPE html>
@@ -65,7 +71,7 @@ def footer(p):
     <div class="cols">
       <div>
         <span class="label">Stofan</span>
-        <p class="blurb">Ísdal er arkitekta- og hönnunarstofa í Reykjavík sem vinnur þvert á arkitektúr, innanhússhönnun og vinnustaði — frá fyrstu skissu að fullbúnu rými.</p>
+        <p class="blurb">Ísdal er arkitekta- og hönnunarstofa í Reykjavík sem vinnur þvert á arkitektúr og innanhússhönnun — frá fyrstu skissu að fullbúnu rými.</p>
       </div>
       <div>
         <span class="label">Vefur</span>
@@ -79,15 +85,16 @@ def footer(p):
       <div>
         <span class="label">Samfélagsmiðlar</span>
         <ul>
-          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="{INSTAGRAM}" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="{LINKEDIN}" target="_blank" rel="noopener">LinkedIn</a></li>
         </ul>
       </div>
       <div>
         <span class="label">Hafa samband</span>
         <ul>
           <li><a href="mailto:info@isdal.is">info@isdal.is</a></li>
-          <li>Reykjavík, Ísland</li>
+          <li>Austurstræti 12a</li>
+          <li>101 Reykjavík, Ísland</li>
         </ul>
       </div>
     </div>
@@ -113,6 +120,11 @@ def page(filename, title, desc, current, body, p=""):
 
 # ------------------------------------------------------------------
 # project data
+#
+# The first four projects are Ísdal's own, fully designed by the studio,
+# and are featured on the front page. Everything after them is a
+# "fyrra verkefni" — work Hildur contributed to at other firms before
+# Ísdal was founded; those are clearly attributed.
 # ------------------------------------------------------------------
 
 PROJECTS = [
@@ -133,7 +145,7 @@ PROJECTS = [
         "lede": "Sumarhús hannað utan um norðurljósin og útsýnið yfir Haukadal — svart timburhús sem hvílir lágt í mosavöxnu hrauni.",
         "paras": [
             "Húsið er hugsað sem sjónauki að himni og fjallahring. Brotið mænisform opnar stór gluggafleti til norðurs og upp í rjáfur, þannig að norðurljósin verða hluti af stofunni á veturna og miðnætursólin á sumrin. Svört standandi klæðning lætur húsið hverfa inn í dökkt hraunið á meðan hlý birta innan úr því lýsir eins og lugt í landslaginu.",
-            "Innra skipulagið er einfalt og hagkvæmt: samfellt alrými fyrir eldhús, borðstofu og stofu undir fullri lofthæð, svefnrými á tveimur pöllum og baðstofa sem tengist heitum potti á sólpalli. Efnisvalið er fábrotið — furukrossviður, steinn og ull — og valið til að eldast fallega með húsinu.",
+            "Innra skipulagið er einfalt og hagkvæmt: samfellt alrými fyrir eldhús, borðstofu og stofu undir fullri lofthæð, svefnrými á tveimur pöllum og baðstofa sem tengist heitum potti á sólpalli. Efnisvalið er fábrotið — náttúrulegur viður, steinn og ull — valið til að eldast fallega með húsinu.",
             "Verkefnið er unnið alla leið frá fyrstu skissu að byggingarleyfi og eftirliti á framkvæmdatíma.",
         ],
         "figs": [
@@ -142,56 +154,37 @@ PROJECTS = [
         ],
     },
     {
-        "slug": "rvk-studios",
+        "slug": "skerdingsstadir",
         "num": "02",
-        "title": "RVK Studios",
-        "cat": "arkitektur vinnurymi",
-        "catlabel": "Endurgerð / Vinnurými",
-        "card": "rvk-studios-2.webp",
+        "title": "Skerðingsstaðir — District Hive",
+        "cat": "arkitektur",
+        "catlabel": "Arkitektúr — skipulag",
+        "card": "skerdingsstadir-1.jpg",
         "meta": [
-            ("Staðsetning", "Gufunes, Reykjavík"),
-            ("Tegund", "Endurgerð iðnaðarhúsnæðis"),
-            ("Hlutverk", "Hönnun vinnurýma og sameigna"),
-            ("Ár", "2023"),
-            ("Staða", "Lokið"),
+            ("Staðsetning", "Skerðingsstaðir við Grundarfjörð, Snæfellsnesi"),
+            ("Tegund", "Heilsudvöl — 14 dvalarklefar"),
+            ("Hlutverk", "Heildarskipulag svæðis"),
+            ("Verkkaupi", "District Hive"),
+            ("Ár", "2025–"),
+            ("Staða", "Í hönnun — áætluð opnun 2026"),
+            ("Vefur", f'<a href="{DISTRICTHIVE}" target="_blank" rel="noopener">districthive.com ↗</a>'),
         ],
-        "lede": "Gömul áburðarverksmiðja í Gufunesi fékk nýtt líf sem kvikmyndaver og skrifstofur RVK Studios.",
+        "lede": "Heildarskipulag heilsudvalar á Snæfellsnesi — fjórtán speglaðir dvalarklefar raðast í geislamynstur innblásið af íslenskum galdrastöfum, með sjónás beint á Kirkjufell.",
         "paras": [
-            "Hráleiki verksmiðjunnar fékk að halda sér: steypt burðarvirki, sýnilegar lagnir og veðrað timbur mynda bakgrunn fyrir nýja starfsemi. Nýjum innskotum — fundarherbergjum, mötuneyti og vinnustofum — er komið fyrir sem frístandandi einingum inni í stóra rýminu svo saga hússins er alltaf sýnileg.",
-            "Mötuneytið og sameiginleg rými liggja að opnu gengi umhverfis miðjukjarna, þar sem dagsbirta að ofan flæðir niður í gegnum hæðirnar. Húsgögn og lýsing voru valin til að standast harða notkun kvikmyndaframleiðslu án þess að missa hlýju.",
+            "Á 7,4 hektara landi Skerðingsstaða vestan Grundarfjarðar er horft yfir Breiðafjörð og til Vestfjarða. Skipulagið tekur mið af staðnum í einu og öllu: fornminjar bæjarhólsins mynda miðju svæðisins, klefarnir raðast um hann í geislamynstri og einn skýr ás liggur í gegnum hólinn beint á Kirkjufell við sjóndeildarhringinn. Um 98% landsins er haldið óröskuðu sem engi og verndarsvæði.",
+            "Gist er í fjórtán speglaðum GlassHive-dvalarklefum fyrir tvo, þar sem landslagið speglast í klefunum á daginn og stjörnuhiminninn vakir yfir gestum á nóttunni. Á svæðinu eru einnig heit laug, gufuböð, gróðurhús og skjólgarður hlaðinn úr grjóti sem myndar verndandi boga til suðurs — efnisval sem sækir í basalt og búskaparminjar staðarins.",
+            "Ísdal vinnur heildarskipulag svæðisins fyrir District Hive og er verkefnið í hönnun; áætluð opnun er í lok árs 2026.",
         ],
         "figs": [
-            ("rvk-studios-2.webp", "Mötuneyti og samverurými í gömlu verksmiðjunni", False),
-            ("rvk-studios-1.webp", "Yfirlitsmynd — kvikmyndaverið í Gufunesi", False),
-        ],
-    },
-    {
-        "slug": "advania",
-        "num": "03",
-        "title": "Advania",
-        "cat": "vinnurymi innanhus",
-        "catlabel": "Vinnurými",
-        "card": "advania-1.webp",
-        "meta": [
-            ("Staðsetning", "Reykjavík"),
-            ("Tegund", "Vinnustaður og matsalur"),
-            ("Hlutverk", "Innanhússhönnun"),
-            ("Ár", "2022"),
-            ("Staða", "Lokið"),
-        ],
-        "lede": "Vinnurými og matsalur Advania — sterkir litir, góð hljóðvist og fjölbreytt aðstaða fyrir ólíkar vinnustundir dagsins.",
-        "paras": [
-            "Verkefnið snerist um að gefa starfsfólki raunverulegt val: opin vinnurými, skjólgóða bása fyrir samtöl, næðisrými og matsal sem virkar jafnt fyrir hádegismat og uppákomur. Hljóðvist var leiðarstef í efnisvali — klæddir veggfletir, teppi og hljóðdempandi loft halda ró í opnum rýmum.",
-            "Litapallettan sækir í vörumerki fyrirtækisins og er notuð markvisst til að aðgreina svæði; djúpfjólubláir samtalsbásar með innfelldri lýsingu urðu eitt af einkennum vinnustaðarins.",
-        ],
-        "figs": [
-            ("advania-1.webp", "Samtalsbás — hljóðvist og innfelld lýsing", False),
-            ("advania-2.webp", "Matsalurinn — „Gjörið svo vel“", False),
+            ("skerdingsstadir-1.jpg", "GlassHive-dvalarklefi að kvöldi", False),
+            ("skerdingsstadir-plan.jpg", "Heildarskipulag — geislamynstur um bæjarhólinn, ás á Kirkjufell", False),
+            ("skerdingsstadir-2.jpg", "Landslagið speglast í klefunum", True),
+            ("skerdingsstadir-3.jpg", "Staðurinn — horft yfir kyrran fjörðinn", True),
         ],
     },
     {
         "slug": "eldhus-i-laugardal",
-        "num": "04",
+        "num": "03",
         "title": "Eldhús í Laugardal",
         "cat": "innanhus",
         "catlabel": "Innanhússhönnun",
@@ -200,23 +193,28 @@ PROJECTS = [
             ("Staðsetning", "Laugardalur, Reykjavík"),
             ("Tegund", "Eldhús og borðstofa"),
             ("Hlutverk", "Innanhússhönnun"),
-            ("Ár", "2024"),
+            ("Ár", "2025"),
             ("Staða", "Lokið"),
+            ("Umfjöllun", f'<a href="{MBL_LAUGARDALUR}" target="_blank" rel="noopener">mbl.is — nóv. 2025 ↗</a>'),
         ],
-        "lede": "Dökkur reykt­ur viður, hvítur steinn og hlý innfelld lýsing — eldhús sem tengir saman eldun, borðhald og daglegt líf fjölskyldunnar.",
+        "lede": "Eldhús í húsi frá 1985, teiknuðu af Kjartani Sveinssyni — dökkur viður og hvítyrjóttur steinn ofan á upprunalegum bleikum marmara sem fékk að halda sér.",
         "paras": [
-            "Innréttingin er teiknuð frá gólfi í loft og nýtir hverja sneið rýmisins: heilklæddur tækjaveggur með innfelldum ofnum, kaffihorni og geymslu losar vinnufleti eldhússeyjunnar undan tækjum og drasli. Dökk eikin fær mótvægi í hvítum steini á borðflötum og glerskápum með speglabaki sem dýpka rýmið.",
-            "Borðstofan er hugsuð sem framhald eldhússins — sérsmíðaður stofuskápur með glerhurðum og innfelldri lýsingu rammar inn borðhaldið og heldur heildarsvip í gegnum bæði rými.",
+            "Eldhúsinu var upprunalega skipt í þrjú rými — eldhús, borðkrók og fína borðstofu. Þegar milliveggir voru farnir stóð eftir eitt stórt og langt rými, opinn strigi fyrir nýja innréttingu. Áskorunin lá í gólfinu: bleiki marmarinn er upprunalegur og var slípaður og bónaður í stað þess að hrófla við honum, svo hvorki vatn né rafmagn var fært að ráði.",
+            "Innréttingin er teiknuð frá gólfi í loft: heilklæddur tækjaveggur með innfelldum ofnum og kaffihorni losar vinnufleti eyjunnar, og tangi við eyjuna nýtist jafnt sem matar- og vinnuborð, baðaður dagsbirtu. Borðplatan er hvítyrjótt og höfð einföld svo gólfefnið fái að njóta sín. Búrið var endurgert, hurðagat breikkað og rennihurð sett í.",
+            "Við matarborðið var sérhannaður glasaskápur með innfelldri lýsingu sem rammar inn borðhaldið og heldur heildarsvip í gegnum bæði rými.",
         ],
         "figs": [
-            ("eldhus-laug-1.webp", "Eldhúsið — dökk eik og hvítur steinn", False),
-            ("eldhus-laug-2.webp", "Eyjan við gluggann", True),
-            ("eldhus-laug-3.webp", "Sérsmíðaður stofuskápur með innfelldri lýsingu", True),
+            ("eldhus-laug-1.webp", "Eldhúsið — dökkur viður og hvítyrjóttur steinn", False),
+            ("eldhus-laug-4.jpg", "Tanginn á eyjunni — matar- og vinnuborð í dagsbirtu", True),
+            ("eldhus-laug-2.webp", "Borðkrókurinn við gluggann", True),
+            ("eldhus-laug-3.webp", "Sérhannaður glasaskápur við matarborðið", True),
+            ("eldhus-laug-5.jpg", "Búrið — endurgert með rennihurð", True),
+            ("eldhus-laug-6.jpg", "Húsið frá 1985, teiknað af Kjartani Sveinssyni", False),
         ],
     },
     {
         "slug": "eldhus-i-mosfellsbae",
-        "num": "05",
+        "num": "04",
         "title": "Eldhús í Mosfellsbæ",
         "cat": "innanhus",
         "catlabel": "Innanhússhönnun",
@@ -225,32 +223,64 @@ PROJECTS = [
             ("Staðsetning", "Mosfellsbær"),
             ("Tegund", "Eldhús"),
             ("Hlutverk", "Innanhússhönnun"),
+            ("Ár", "2024"),
+            ("Staða", "Lokið"),
+            ("Umfjöllun", f'<a href="{MBL_MOSFELLSBAER}" target="_blank" rel="noopener">mbl.is — feb. 2025 ↗</a>'),
+        ],
+        "lede": "Langt og mjótt eldhús þar sem bogadreginn tangi kom í staðinn fyrir eyju — klassísk hönnun og praktík í senn, með marmara sem flæðir upp á veggi.",
+        "paras": [
+            "Rýmið var langt og mjótt og hefðbundin eyja hefði þrengt að því. Í staðinn var settur bogadreginn tangi við enda innréttingarinnar — fimm manneskjur geta setið við hann og hann tengir eldhúsið við garðinn og dagsbirtuna. Rifflaður eikarviður og ávöl form gera tangann að húsgagni frekar en innréttingu.",
+            "Marmarinn setur tóninn: hann liggur á borðflötum, heldur áfram sem heill bakveggur og flæðir upp á veggi inni í kaffihorninu sem prýðir innréttinguna. Hvítar sléttar hurðir halda heildinni rólegri en hlýjan kemur úr viðnum og látúnsdetaljum í tækjum og höldum.",
+            "Verkefnið var eitt af fyrstu verkum stofunnar og sameinar það sem eigendur báðu um: praktík hversdagsins og klassíska hönnun sem eldist vel.",
+        ],
+        "figs": [
+            ("eldhus-mos-1.webp", "Bogadregni tanginn — rifflaður eikarviður og marmari", False),
+            ("eldhus-mos-3.jpg", "Langt og mjótt rými — tanginn við enda innréttingarinnar", True),
+            ("eldhus-mos-2.webp", "Kaffihornið — marmarinn flæðir upp á veggi", True),
+            ("eldhus-mos-4.jpg", "Hátt til lofts og útgengt í garðinn", False),
+        ],
+    },
+    # ---------- fyrri verkefni — unnin hjá öðrum stofum fyrir stofnun Ísdal ----------
+    {
+        "slug": "rvk-studios",
+        "num": "05",
+        "title": "RVK Studios",
+        "cat": "fyrri",
+        "catlabel": "Fyrra verk",
+        "card": "rvk-studios-2.webp",
+        "meta": [
+            ("Staðsetning", "Gufunes, Reykjavík"),
+            ("Tegund", "Endurgerð iðnaðarhúsnæðis"),
+            ("Hlutverk", "Hönnun vinnurýma og sameigna"),
+            ("Stofa", "Fyrra verk — unnið fyrir stofnun Ísdal"),
             ("Ár", "2023"),
             ("Staða", "Lokið"),
         ],
-        "lede": "Ljóst og opið fjölskyldueldhús þar sem rifflaður eikarviður, grár marmari og mjúk form mætast.",
+        "lede": "Gömul áburðarverksmiðja í Gufunesi fékk nýtt líf sem kvikmyndaver og skrifstofur RVK Studios.",
         "paras": [
-            "Eyjan er hjarta rýmisins — ávalir endar og rifflaður eikarviður gera hana að húsgagni frekar en innréttingu, og barstólar við gluggann tengja eldhúsið við garðinn. Marmarinn heldur áfram upp vegginn sem heill bakveggur með innfelldri lýsingu undir efri skápum.",
-            "Hvítar sléttar hurðir halda heildinni rólegri, en hlýjan kemur úr viðnum og látúnsdetaljum í blöndunartækjum og höldum.",
+            "Hráleiki verksmiðjunnar fékk að halda sér: steypt burðarvirki, sýnilegar lagnir og veðrað timbur mynda bakgrunn fyrir nýja starfsemi. Nýjum innskotum — fundarherbergjum, mötuneyti og vinnustofum — er komið fyrir sem frístandandi einingum inni í stóra rýminu svo saga hússins er alltaf sýnileg.",
+            "Mötuneytið og sameiginleg rými liggja að opnu gengi umhverfis miðjukjarna, þar sem dagsbirta að ofan flæðir niður í gegnum hæðirnar. Húsgögn og lýsing voru valin til að standast harða notkun kvikmyndaframleiðslu án þess að missa hlýju.",
+            "Verkefnið var unnið áður en Ísdal var stofnuð.",
         ],
         "figs": [
-            ("eldhus-mos-1.webp", "Eyjan — rifflaður eikarviður og grár marmari", False),
-            ("eldhus-mos-2.webp", "Kaffihorn með marmarabaki", True),
+            ("rvk-studios-2.webp", "Mötuneyti og samverurými í gömlu verksmiðjunni", False),
+            ("rvk-studios-1.webp", "Yfirlitsmynd — kvikmyndaverið í Gufunesi", False),
         ],
     },
     {
         "slug": "fjolbyli-med-inngardi",
         "num": "06",
         "title": "Fjölbýli með inngarði",
-        "cat": "arkitektur",
-        "catlabel": "Arkitektúr",
+        "cat": "fyrri",
+        "catlabel": "Fyrra verk",
         "card": "fjolbyli-1.webp",
         "meta": [
             ("Staðsetning", "Höfuðborgarsvæðið"),
             ("Tegund", "Íbúðir — hönnunartillaga"),
             ("Hlutverk", "Arkitektúr"),
+            ("Stofa", "Fyrra verk — unnið fyrir stofnun Ísdal"),
             ("Ár", "2024"),
-            ("Staða", "Í vinnslu"),
+            ("Staða", "Tillaga"),
         ],
         "lede": "Tillaga að timburbyggðu fjölbýli þar sem íbúðirnar raðast um gróinn inngarð — sameign sem raunverulega er notuð.",
         "paras": [
@@ -266,20 +296,20 @@ PROJECTS = [
         "slug": "albano",
         "num": "07",
         "title": "Albano háskólasvæðið",
-        "cat": "arkitektur",
-        "catlabel": "Arkitektúr",
+        "cat": "fyrri",
+        "catlabel": "Fyrra verk — Arkitema",
         "card": "albano-1.webp",
         "meta": [
             ("Staðsetning", "Stokkhólmur, Svíþjóð"),
             ("Tegund", "Háskólasvæði"),
-            ("Hlutverk", "Arkitekt í teymi Arkitema"),
+            ("Stofa", "Arkitema — Hildur í verkefnateymi"),
             ("Ár", "2017–2021"),
             ("Staða", "Lokið"),
         ],
         "lede": "Nýtt háskólahverfi fyrir Stokkhólmsháskóla og KTH — kennsluhús, rannsóknarrými og stúdentaíbúðir í vistvottuðu borgarumhverfi.",
         "paras": [
             "Albano er eitt stærsta uppbyggingarverkefni háskólanna í Stokkhólmi og var skipulagt sem „vistkerfishverfi“ þar sem byggingar, almenningsrými og gróður vinna saman. Hildur starfaði að verkefninu sem arkitekt hjá Arkitema, meðal annars að hönnun kennslu- og rannsóknarbygginga.",
-            "Verkefnið kenndi stofunni margt sem fylgir henni enn: samhæfingu stórra hagsmunahópa, sjálfbærnivottanir og hvernig almannarými á milli húsa ráða jafnmiklu um upplifun og húsin sjálf.",
+            "Verkefnið kenndi margt sem fylgir stofunni enn: samhæfingu stórra hagsmunahópa, sjálfbærnivottanir og hvernig almannarými á milli húsa ráða jafnmiklu um upplifun og húsin sjálf.",
         ],
         "figs": [
             ("albano-1.webp", "Háskólahverfið við Brunnsviken", False),
@@ -290,13 +320,13 @@ PROJECTS = [
         "slug": "langsjoskolan",
         "num": "08",
         "title": "Långsjöskolan",
-        "cat": "arkitektur",
-        "catlabel": "Arkitektúr",
+        "cat": "fyrri",
+        "catlabel": "Fyrra verk — Arkitema",
         "card": "langsjo-1.webp",
         "meta": [
             ("Staðsetning", "Stokkhólmur, Svíþjóð"),
             ("Tegund", "Grunnskóli — 900 nemendur"),
-            ("Hlutverk", "Arkitekt í teymi Arkitema"),
+            ("Stofa", "Arkitema — Hildur í verkefnateymi"),
             ("Ár", "2022"),
             ("Staða", "Lokið"),
         ],
@@ -315,13 +345,13 @@ PROJECTS = [
         "slug": "grunnskoli-i-nykoping",
         "num": "09",
         "title": "Grunnskóli í Nyköping",
-        "cat": "arkitektur",
-        "catlabel": "Arkitektúr",
+        "cat": "fyrri",
+        "catlabel": "Fyrra verk — Cedervall",
         "card": "nykoping-1.webp",
         "meta": [
             ("Staðsetning", "Nyköping, Svíþjóð"),
             ("Tegund", "Grunnskóli — 1.100 nemendur"),
-            ("Hlutverk", "Arkitekt í teymi Cedervall arkitekter"),
+            ("Stofa", "Cedervall arkitekter — Hildur í verkefnateymi"),
             ("Ár", "2017"),
             ("Staða", "Lokið"),
         ],
@@ -354,16 +384,16 @@ def pcard(pr, p, eager=False):
 # index.html
 # ------------------------------------------------------------------
 
-featured = [PROJECTS[0], PROJECTS[1], PROJECTS[3], PROJECTS[2]]
+featured = PROJECTS[:4]
 
 index_body = f"""
 <main>
   <section class="hero wrap">
-    <span class="label"><b>Ísdal</b> — Arkitektastofa í Reykjavík</span>
+    <span class="label"><b>Ísdal</b> — Arkitektúr &amp; innanhússhönnun</span>
     <h1 class="display">Rými sem eiga rætur í&nbsp;stað, birtu og&nbsp;fólki</h1>
     <div class="hero-grid">
       <div>
-        <p class="lede">Ísdal er arkitekta- og hönnunarstofa sem vinnur þvert á arkitektúr, innanhússhönnun og vinnustaði. Með yfir tuttugu ára reynslu af heimilum, skrifstofum og almenningsbyggingum á Íslandi og í Svíþjóð fylgjum við verkefnum alla leið — frá fyrstu skissu að byggingarleyfi og fullbúnu rými.</p>
+        <p class="lede">Ísdal er arkitekta- og hönnunarstofa í Reykjavík sem vinnur þvert á arkitektúr og innanhússhönnun. Með yfir tuttugu ára reynslu af heimilum, skrifstofum og almenningsbyggingum fylgjum við verkefnum alla leið — frá fyrstu skissu að byggingarleyfi og fullbúnu rými.</p>
         <br>
         <a class="alink" href="verkefni.html">Skoða verkefnin</a>
       </div>
@@ -377,7 +407,7 @@ index_body = f"""
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <span class="label">01 — <b>Valin verkefni</b></span>
+        <span class="label">01 — <b>Verkefni Ísdal</b></span>
         <a class="alink" href="verkefni.html">Öll verkefni</a>
       </div>
       <div class="projects-grid">
@@ -404,11 +434,6 @@ index_body = f"""
         </div>
         <div class="service-row reveal">
           <span class="num">/03</span>
-          <h3>Vinnustaðir</h3>
-          <p>Skrifstofur, mötuneyti og sérhæfð vinnurými. Greining á þörfum, rýmisskipulag og hönnun sem styður ólíkar vinnustundir dagsins.</p>
-        </div>
-        <div class="service-row reveal">
-          <span class="num">/04</span>
           <h3>Byggingarleyfi &amp; ráðgjöf</h3>
           <p>Aðaluppdrættir, byggingarleyfisumsóknir og samskipti við byggingarfulltrúa — við þekkjum ferlið og styttum leiðina.</p>
         </div>
@@ -422,12 +447,7 @@ index_body = f"""
         <span class="label">03 — <b>Stofan</b></span>
         <a class="alink" href="um-okkur.html">Um okkur</a>
       </div>
-      <p class="lede" style="margin-bottom: clamp(32px, 5vw, 56px);">Ísdal var stofnuð af Hildi Ísdal arkitekt og er í dag þriggja kvenna stofa sem sameinar íslenska og skandinavíska hönnunarhefð. Við trúum á vandaða hversdagsbyggingarlist — hús og rými sem eldast vel og þjóna fólkinu sem notar þau.</p>
-      <div class="studio-strip reveal">
-        <div><span class="big">3</span><span class="label">Arkitektar &amp; hönnuðir</span></div>
-        <div><span class="big">20+</span><span class="label">Ára reynsla</span></div>
-        <div><span class="big">2</span><span class="label">Lönd — Ísland &amp; Svíþjóð</span></div>
-      </div>
+      <p class="lede">Ísdal var stofnuð af Hildi Ísdal, arkitekt og innanhússhönnuði. Stofan leggur áherslu á náttúrleg efni, birtu og tímalausa hönnun — rými sköpuð utan um fólkið sem notar þau, með gæði út í gegn.</p>
     </div>
   </section>
 
@@ -445,12 +465,12 @@ index_body = f"""
         </a>
         <a class="news-item reveal" href="frettir.html">
           <time datetime="2026-06-15">15.06.2026</time>
-          <h3>Stofan stækkar — Dagný og Sara ganga til liðs við Ísdal</h3>
+          <h3>Sara innanhússhönnuður gengur til liðs við stofuna</h3>
           <span class="arrow">→</span>
         </a>
         <a class="news-item reveal" href="frettir.html">
-          <time datetime="2026-04-03">03.04.2026</time>
-          <h3>Sumarhús við Geysi rís í Haukadal</h3>
+          <time datetime="2026-02-12">12.02.2026</time>
+          <h3>Dagný innanhúsarkitekt hefur störf hjá Ísdal</h3>
           <span class="arrow">→</span>
         </a>
       </div>
@@ -461,7 +481,7 @@ index_body = f"""
 <section class="cta-band">
   <div class="wrap">
     <span class="label">05 — <b>Hafa samband</b></span>
-    <h2>Með verkefni í&nbsp;huga? Ekki hika við að hafa samband.</h2>
+    <h2>Með verkefni í&nbsp;huga? Ekki hika við að hafa samband og við getum rætt málin saman&nbsp;☕</h2>
     <a class="alink" href="hafa-samband.html">Hafa samband</a>
   </div>
 </section>
@@ -470,7 +490,7 @@ index_body = f"""
 page(
     "index.html",
     "ÍSDAL — Arkitektúr & innanhússhönnun í Reykjavík",
-    "Ísdal er arkitekta- og hönnunarstofa í Reykjavík. Arkitektúr, innanhússhönnun, vinnustaðir og byggingarleyfi.",
+    "Ísdal er arkitekta- og hönnunarstofa í Reykjavík. Arkitektúr, innanhússhönnun og byggingarleyfi — frá fyrstu skissu að fullbúnu rými.",
     "heim",
     index_body,
 )
@@ -484,7 +504,7 @@ verkefni_body = f"""
   <section class="page-head wrap">
     <span class="label"><b>Verkefni</b> — {len(PROJECTS)} verk</span>
     <h1 class="display">Verkefni</h1>
-    <p class="lede">Úrval verkefna stofunnar — frá sumarhúsum og eldhúsum til kvikmyndavera og skóla fyrir þúsund nemendur.</p>
+    <p class="lede">Frá sumarhúsum og eldhúsum til kvikmyndavera og skóla fyrir þúsund nemendur.</p>
   </section>
   <section class="section" style="padding-top: 0;">
     <div class="wrap">
@@ -492,7 +512,7 @@ verkefni_body = f"""
         <button data-filter="allt" class="active">Allt</button>
         <button data-filter="arkitektur">Arkitektúr</button>
         <button data-filter="innanhus">Innanhússhönnun</button>
-        <button data-filter="vinnurymi">Vinnustaðir</button>
+        <button data-filter="fyrri">Fyrri verkefni</button>
       </div>
       <div class="projects-grid">
         {''.join(pcard(pr, '') for pr in PROJECTS)}
@@ -505,7 +525,7 @@ verkefni_body = f"""
 page(
     "verkefni.html",
     "Verkefni — ÍSDAL",
-    "Verkefni Ísdal: arkitektúr, innanhússhönnun og vinnustaðir á Íslandi og í Svíþjóð.",
+    "Verkefni Ísdal: arkitektúr og innanhússhönnun — auk fyrri verka sem unnin voru hjá öðrum stofum.",
     "verkefni",
     verkefni_body,
 )
@@ -554,7 +574,7 @@ for i, pr in enumerate(PROJECTS):
     detail_body = f"""
 <main>
   <section class="detail-head wrap">
-    <a class="alink crumb" href="../verkefni.html" style="transform: scaleX(-1);"></a>
+    <a class="label crumb" href="../verkefni.html">← Öll verkefni</a>
     <span class="label" style="display:block; margin-bottom:18px;">Verk {pr['num']} — <b>{pr['catlabel']}</b></span>
     <h1>{pr['title']}</h1>
   </section>
@@ -580,11 +600,6 @@ for i, pr in enumerate(PROJECTS):
   </section>
 </main>
 """
-    # simpler back-link (the scaleX hack above renders poorly — use plain text link)
-    detail_body = detail_body.replace(
-        '<a class="alink crumb" href="../verkefni.html" style="transform: scaleX(-1);"></a>',
-        '<a class="label crumb" href="../verkefni.html">← Öll verkefni</a>',
-    )
 
     page(
         f"verkefni/{pr['slug']}.html",
@@ -596,15 +611,132 @@ for i, pr in enumerate(PROJECTS):
     )
 
 # ------------------------------------------------------------------
+# team data + pages
+# ------------------------------------------------------------------
+
+TEAM = [
+    {
+        "slug": "hildur",
+        "name": "Hildur Ísdal Þorgeirsdóttir",
+        "role": "Stofnandi — Arkitekt &amp; innanhússhönnuður",
+        "img": "hildur.webp",
+        "init": "H",
+        "paras": [
+            "Hildur stofnaði Ísdal eftir rúman áratug á arkitektastofum í Stokkhólmi og Reykjavík. Ferillinn hófst í innanhússarkitektúr í Mílanó um aldamótin; síðan lá leiðin í arkitektúr við Listaháskóla Íslands og KTH í Stokkhólmi, þaðan sem hún útskrifaðist sem arkitekt árið 2014.",
+            "Hún hefur unnið að öllu frá eldhúsum upp í háskólahverfi — og sú samsetning, detalja innanhússhönnuðarins og yfirsýn arkitektsins, mótar öll verkefni stofunnar. Hildur er löggiltur mannvirkjahönnuður og hannar hús jafnt að innan sem utan.",
+        ],
+        "cv": [
+            ("2023–", "Ísdal — stofnandi og eigandi, Reykjavík"),
+            ("2021–23", "Plús arkitektar, Reykjavík — arkitekt"),
+            ("2017–21", "Arkitema, Stokkhólmi — arkitekt"),
+            ("2014–17", "Cedervall arkitekter, Stokkhólmi — arkitekt"),
+            ("2012", "White arkitekter, Stokkhólmi"),
+            ("2003–12", "Innanhússhönnun, Reykjavík og Mílanó"),
+            ("Menntun", "MS í sjálfbærum arkitektúr — KTH, Stokkhólmi · BA í arkitektúr — Listaháskóli Íslands · Innanhússhönnun — SPD Scuola Politecnica di Design, Mílanó · Löggiltur mannvirkjahönnuður"),
+        ],
+    },
+    {
+        "slug": "dagny",
+        "name": "Dagný",
+        "role": "Innanhúsarkitekt",
+        "img": None,
+        "init": "D",
+        "paras": [
+            "Dagný er innanhúsarkitekt og gekk til liðs við Ísdal í febrúar 2026. Hún vinnur að innanhússverkefnum stofunnar — innréttingum, efnisvali og lýsingu — og fylgir sérsmíði eftir frá teikningu að uppsetningu.",
+        ],
+        "cv": [],
+    },
+    {
+        "slug": "sara",
+        "name": "Sara",
+        "role": "Innanhússhönnuður",
+        "img": None,
+        "init": "S",
+        "paras": [
+            "Sara er innanhússhönnuður hjá Ísdal. Hún vinnur þvert á verkefni stofunnar að efnisvali, húsgögnum og framsetningu og heldur utan um efnissafn vinnustofunnar á Austurstræti.",
+        ],
+        "cv": [],
+    },
+]
+
+for person in TEAM:
+    if person["img"]:
+        visual = f"""<figure class="plate reveal">
+          <img src="../assets/img/{person['img']}" alt="{person['name']}">
+          <figcaption><span><b>{person['name']}</b></span><span>Reykjavík</span></figcaption>
+        </figure>"""
+    else:
+        visual = f"""<div class="ph-tile reveal">
+          <span class="init">{person['init']}</span>
+          <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="0,9 24,0 24,24 0,24"/></svg>
+        </div>"""
+
+    cv_html = ""
+    if person["cv"]:
+        rows = "".join(
+            f'<div class="row"><span class="k">{k}</span><span>{v}</span></div>'
+            for k, v in person["cv"]
+        )
+        cv_html = f'<div class="cv">{rows}</div>'
+
+    paras = "".join(f"<p>{t}</p>" for t in person["paras"])
+
+    person_body = f"""
+<main>
+  <section class="detail-head wrap">
+    <a class="label crumb" href="../um-okkur.html">← Um okkur</a>
+    <span class="label" style="display:block; margin-bottom:18px;"><b>Teymið</b></span>
+    <h1>{person['name']}</h1>
+  </section>
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="founder">
+        {visual}
+        <div>
+          <span class="label role">{person['role']}</span>
+          {paras}
+          {cv_html}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+"""
+    page(
+        f"folk/{person['slug']}.html",
+        f"{person['name']} — ÍSDAL",
+        f"{person['name']} — {person['role'].replace('&amp;', '&')} hjá Ísdal.",
+        "um",
+        person_body,
+        p="../",
+    )
+
+# ------------------------------------------------------------------
 # um-okkur.html
 # ------------------------------------------------------------------
 
-um_body = """
+
+def tcard(person):
+    if person["img"]:
+        ph = f'<div class="ph"><img src="assets/img/{person["img"]}" alt="{person["name"]}"></div>'
+    else:
+        ph = f"""<div class="ph">
+            <span class="init">{person['init']}</span>
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="0,9 24,0 24,24 0,24"/></svg>
+          </div>"""
+    return f"""
+        <a class="tcard reveal" href="folk/{person['slug']}.html">
+          {ph}
+          <div class="meta"><b>{person['name']}</b><span>{person['role']}</span></div>
+        </a>"""
+
+
+um_body = f"""
 <main>
   <section class="page-head wrap">
     <span class="label"><b>Um okkur</b> — Stofan</span>
-    <h1 class="display">Lítil stofa, stór verkefni</h1>
-    <p class="lede">Ísdal er arkitekta- og hönnunarstofa í Reykjavík, stofnuð af Hildi Ísdal. Í dag erum við þrjár — arkitektar og innanhússhönnuður — og vinnum verkefni af öllum stærðum, frá einu eldhúsi upp í heilar byggingar.</p>
+    <h1 class="display">Frá skissu til framkvæmdaloka</h1>
+    <p class="lede">Ísdal er arkitekta- og hönnunarstofa í Reykjavík sem fylgir verkefnum alla leið — arkitektúr, innanhússhönnun og byggingarleyfi á einni hendi.</p>
   </section>
 
   <section class="section" style="padding-top:0;">
@@ -615,16 +747,15 @@ um_body = """
       <div class="detail-grid">
         <div>
           <div class="studio-strip vert">
-            <div><span class="big">3</span><span class="label">Arkitektar &amp; hönnuðir</span></div>
             <div><span class="big">20+</span><span class="label">Ára reynsla</span></div>
-            <div><span class="big">2</span><span class="label">Lönd — Ísland &amp; Svíþjóð</span></div>
+            <div><span class="big">101</span><span class="label">Austurstræti 12a, Reykjavík</span></div>
           </div>
         </div>
         <div class="detail-body">
-          <p class="lede">Við trúum á vandaða hversdagsbyggingarlist — hús og rými sem eldast vel og þjóna fólkinu sem notar þau.</p>
-          <p>Hvert verkefni byrjar á staðnum og fólkinu: hvernig fellur birtan, hvaðan blæs, hvernig er gengið um húsið á venjulegum þriðjudegi? Út frá því mótum við skýra hugmynd sem heldur í gegnum allt ferlið — frá skissu að byggingarleyfi, útboði og eftirliti.</p>
-          <p>Reynsla okkar spannar heimili, skrifstofur, skóla og almenningsbyggingar á Íslandi og í Svíþjóð. Sú breidd nýtist í hverju verki: skólahönnun kennir manni flæði og hljóðvist, eldhúshönnun kennir manni detalju — og hvort tveggja gerir betri byggingar.</p>
-          <p>Stofan tekur að sér arkitektúr, innanhússhönnun, vinnustaðaráðgjöf og gerð aðaluppdrátta til byggingarleyfis.</p>
+          <p class="lede">Náttúrleg efni, birta og tímalaus hönnun — rými sköpuð utan um fólkið sem notar þau, með gæði út í gegn.</p>
+          <p>Hvert verkefni byrjar á fólkinu: hvernig það lifir, hvernig gengið er um heimilið á venjulegum þriðjudegi og hvar dagsbirtan fellur. Út frá því mótum við rými utan um einstaklinginn — hönnun sem lyftir hversdagslegum athöfnum og gerir daglegt líf einfaldara og fallegra.</p>
+          <p>Við veljum náttúrleg efni sem eldast vel — við, stein og ull — og vinnum markvisst með birtuna í hverju rými. Markmiðið er tímalaus hönnun: hús og innréttingar sem standast tísku og tíma jafn vel eftir tuttugu ár og á afhendingardegi.</p>
+          <p>Gæði eru rauði þráðurinn í gegnum allt ferlið — í hugsun, teikningu, efnisvali og framkvæmd. Þess vegna fylgjum við verkefnum frá fyrstu skissu til framkvæmdaloka og teiknum detaljur niður í minnstu samskeyti.</p>
         </div>
       </div>
     </div>
@@ -634,55 +765,10 @@ um_body = """
     <div class="wrap">
       <div class="section-head">
         <span class="label">02 — <b>Teymið</b></span>
+        <span class="label muted">Smelltu á starfsmann fyrir nánari upplýsingar</span>
       </div>
       <div class="team-grid">
-        <div class="tcard reveal">
-          <div class="ph"><img src="assets/img/hildur.webp" alt="Hildur Ísdal Þorgeirsdóttir"></div>
-          <div class="meta"><b>Hildur Ísdal Þorgeirsdóttir</b><span>Stofnandi — Arkitekt FAÍ &amp; innanhússhönnuður</span></div>
-        </div>
-        <div class="tcard reveal">
-          <div class="ph">
-            <span class="init">D</span>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="0,9 24,0 24,24 0,24"/></svg>
-          </div>
-          <div class="meta"><b>Dagný</b><span>Arkitekt</span></div>
-        </div>
-        <div class="tcard reveal">
-          <div class="ph">
-            <span class="init">S</span>
-            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="0,9 24,0 24,24 0,24"/></svg>
-          </div>
-          <div class="meta"><b>Sara</b><span>Innanhússhönnuður</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <span class="label">03 — <b>Stofnandinn</b></span>
-      </div>
-      <div class="founder">
-        <figure class="plate reveal">
-          <img src="assets/img/hildur.webp" alt="Hildur Ísdal Þorgeirsdóttir, stofnandi Ísdal">
-          <figcaption><span><b>Hildur Ísdal Þorgeirsdóttir</b></span><span>Reykjavík</span></figcaption>
-        </figure>
-        <div>
-          <h3>Hildur Ísdal Þorgeirsdóttir</h3>
-          <span class="label role">Stofnandi — Arkitekt FAÍ &amp; innanhússhönnuður</span>
-          <p>Hildur stofnaði Ísdal árið 2023 eftir rúman áratug á stofum í Svíþjóð og á Íslandi. Hún hóf ferilinn í innanhússhönnun, lauk síðar meistaranámi í sjálfbærum arkitektúr og hefur unnið að öllu frá eldhúsum upp í háskólahverfi. Sú samsetning — detalja innanhússhönnuðarins og yfirsýn arkitektsins — mótar öll verkefni stofunnar.</p>
-          <p>Hildur er löggiltur hönnuður aðaluppdrátta og hefur áritunarrétt á Íslandi.</p>
-          <div class="cv">
-            <div class="row"><span class="k">2023–</span><span>Ísdal — stofnandi og eigandi, Reykjavík</span></div>
-            <div class="row"><span class="k">2021–23</span><span>Plús arkitektar, Reykjavík — arkitekt</span></div>
-            <div class="row"><span class="k">2017–21</span><span>Arkitema, Stokkhólmi — arkitekt</span></div>
-            <div class="row"><span class="k">2014–17</span><span>Cedervall arkitekter, Stokkhólmi — arkitekt</span></div>
-            <div class="row"><span class="k">2012</span><span>White arkitekter, Stokkhólmi</span></div>
-            <div class="row"><span class="k">2003–12</span><span>Innanhússhönnun, Reykjavík og Mílanó</span></div>
-            <div class="row"><span class="k">Menntun</span><span>MS í sjálfbærum arkitektúr — KTH, Stokkhólmi · BA í arkitektúr — Listaháskóli Íslands · Innanhússhönnun — SPD Scuola Politecnica di Design, Mílanó</span></div>
-          </div>
-        </div>
+        {''.join(tcard(p) for p in TEAM)}
       </div>
     </div>
   </section>
@@ -690,7 +776,7 @@ um_body = """
 
 <section class="cta-band">
   <div class="wrap">
-    <span class="label">04 — <b>Samstarf</b></span>
+    <span class="label">03 — <b>Samstarf</b></span>
     <h2>Viltu vinna með okkur — eða hjá okkur?</h2>
     <a class="alink" href="hafa-samband.html">Hafa samband</a>
   </div>
@@ -700,7 +786,7 @@ um_body = """
 page(
     "um-okkur.html",
     "Um okkur — ÍSDAL",
-    "Ísdal er þriggja kvenna arkitekta- og hönnunarstofa í Reykjavík, stofnuð af Hildi Ísdal arkitekt.",
+    "Ísdal er arkitekta- og hönnunarstofa í Reykjavík sem fylgir verkefnum frá fyrstu skissu til framkvæmdaloka.",
     "um",
     um_body,
 )
@@ -709,7 +795,7 @@ page(
 # frettir.html
 # ------------------------------------------------------------------
 
-frettir_body = """
+frettir_body = f"""
 <main>
   <section class="page-head wrap">
     <span class="label"><b>Fréttir</b> — Af stofunni</span>
@@ -722,30 +808,46 @@ frettir_body = """
           <time datetime="2026-08-01">01.08.2026</time>
           <div>
             <h3>Ný ásýnd og nýr vefur Ísdal</h3>
-            <p>Ísdal stígur fram sem stofa: nýtt merki, ný ásýnd og nýr vefur sem endurspeglar breiddina í verkefnum okkar — frá innréttingum til heilla bygginga. Merkið sækir form sitt í íslenska jökulinn sem stofan heitir eftir.</p>
+            <p>Nýtt merki, ný ásýnd og nýr vefur sem endurspeglar breiddina í verkefnum okkar — frá innréttingum til heildarskipulags. Merkið sækir form sitt í íslenska jökulinn sem stofan heitir eftir.</p>
           </div>
         </div>
         <div class="news-item reveal">
           <time datetime="2026-06-15">15.06.2026</time>
           <div>
-            <h3>Stofan stækkar — Dagný og Sara ganga til liðs við Ísdal</h3>
-            <p>Við bjóðum Dagnýju arkitekt og Söru innanhússhönnuð velkomnar í teymið. Með þeim verður Ísdal þriggja kvenna stofa og getur tekið að sér stærri og fjölbreyttari verkefni en áður.</p>
+            <h3>Sara innanhússhönnuður gengur til liðs við stofuna</h3>
+            <p>Við bjóðum Söru innanhússhönnuð velkomna í teymið. Sara vinnur þvert á verkefni stofunnar að efnisvali, húsgögnum og framsetningu.</p>
           </div>
         </div>
         <div class="news-item reveal">
-          <time datetime="2026-04-03">03.04.2026</time>
+          <time datetime="2026-02-12">12.02.2026</time>
           <div>
-            <h3>Sumarhús við Geysi rís í Haukadal</h3>
-            <p>Framkvæmdir við sumarhúsið í Haukadal ganga vel — húsið er fokhelt og innra frágangi miðar áfram. Stefnt er að verklokum fyrir veturinn, í tæka tíð fyrir norðurljósatímabilið.</p>
+            <h3>Dagný innanhúsarkitekt hefur störf hjá Ísdal</h3>
+            <p>Dagný innanhúsarkitekt hóf störf hjá stofunni í febrúar og styrkir innanhússteymið — innréttingar, efnisval og lýsingu í verkefnum stofunnar.</p>
           </div>
         </div>
         <div class="news-item reveal">
           <time datetime="2026-01-20">20.01.2026</time>
           <div>
-            <h3>Ísdal opnar vinnustofu í miðborg Reykjavíkur</h3>
-            <p>Stofan hefur komið sér fyrir í bjartri vinnustofu í miðborginni. Kaffið er alltaf heitt — kíktu í heimsókn ef þú ert með verkefni í huga.</p>
+            <h3>Ísdal opnar vinnustofu á Austurstræti 12a</h3>
+            <p>Stofan hefur komið sér fyrir í bjartri vinnustofu á Austurstræti 12a, 101 Reykjavík. Kaffið er alltaf heitt — kíktu í heimsókn ef þú ert með verkefni í huga.</p>
           </div>
         </div>
+        <a class="news-item reveal" href="{MBL_LAUGARDALUR}" target="_blank" rel="noopener">
+          <time datetime="2025-11-18">18.11.2025</time>
+          <div>
+            <h3>„Hildur hannaði stórkostlegt eldhús í Reykjavík“</h3>
+            <p>Smartland mbl.is fjallar um eldhúsið í Laugardal — hús frá 1985 eftir Kjartan Sveinsson þar sem upprunalegi bleiki marmarinn fékk að halda sér. Lesa umfjöllunina á mbl.is.</p>
+          </div>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="news-item reveal" href="{MBL_MOSFELLSBAER}" target="_blank" rel="noopener">
+          <time datetime="2025-02-23">23.02.2025</time>
+          <div>
+            <h3>„Bogadreginn tangi kom í staðinn fyrir eyju“</h3>
+            <p>Smartland mbl.is fjallar um eldhúsið í Mosfellsbæ þar sem bogadreginn tangi leysti eyjuna af hólmi — og ræðir við Hildi um heimkomuna og stofnun Ísdal. Lesa umfjöllunina á mbl.is.</p>
+          </div>
+          <span class="arrow">↗</span>
+        </a>
       </div>
     </div>
   </section>
@@ -764,7 +866,7 @@ page(
 # hafa-samband.html
 # ------------------------------------------------------------------
 
-samband_body = """
+samband_body = f"""
 <main>
   <section class="page-head wrap">
     <span class="label"><b>Hafa samband</b></span>
@@ -777,11 +879,11 @@ samband_body = """
         <div>
           <div class="contact-list">
             <div class="row"><span class="k">Netfang</span><span class="v"><a href="mailto:info@isdal.is">info@isdal.is</a></span></div>
-            <div class="row"><span class="k">Staðsetning</span><span class="v">Reykjavík, Ísland</span></div>
-            <div class="row"><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/" target="_blank" rel="noopener">@isdal</a></span></div>
-            <div class="row"><span class="k">LinkedIn</span><span class="v"><a href="https://www.linkedin.com/" target="_blank" rel="noopener">Ísdal</a></span></div>
+            <div class="row"><span class="k">Vinnustofa</span><span class="v">Austurstræti 12a<br>101 Reykjavík, Ísland</span></div>
+            <div class="row"><span class="k">Instagram</span><span class="v"><a href="{INSTAGRAM}" target="_blank" rel="noopener">@hildur_isdal</a></span></div>
+            <div class="row"><span class="k">LinkedIn</span><span class="v"><a href="{LINKEDIN}" target="_blank" rel="noopener">Hildur Ísdal</a></span></div>
           </div>
-          <p class="muted" style="margin-top:28px; max-width:36em;">Við svörum fyrirspurnum að jafnaði innan tveggja virkra daga. Ef verkefnið þolir enga bið má líka finna okkur á vinnustofunni í miðborginni.</p>
+          <p class="muted" style="margin-top:28px; max-width:36em;">Við svörum fyrirspurnum að jafnaði innan tveggja virkra daga. Ef verkefnið þolir enga bið má líka finna okkur á vinnustofunni á Austurstræti 12a í miðborginni.</p>
         </div>
         <form class="contact-form" novalidate>
           <div class="field">
@@ -807,7 +909,7 @@ samband_body = """
 page(
     "hafa-samband.html",
     "Hafa samband — ÍSDAL",
-    "Hafðu samband við Ísdal — arkitekta- og hönnunarstofu í Reykjavík.",
+    "Hafðu samband við Ísdal — Austurstræti 12a, 101 Reykjavík.",
     "samband",
     samband_body,
 )

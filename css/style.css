@@ -556,6 +556,27 @@ a.news-item:hover { padding-left: 12px; }
 }
 .tcard .meta b { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; }
 .tcard .meta span { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); text-align: right; }
+a.tcard .ph img { transition: transform 0.7s cubic-bezier(0.2, 0.6, 0.2, 1); }
+a.tcard:hover .ph img { transform: scale(1.035); }
+a.tcard:hover .meta b { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+
+/* standalone placeholder portrait tile (team detail pages) */
+.ph-tile {
+  aspect-ratio: 4 / 5;
+  max-width: 480px;
+  background: var(--paper-2);
+  position: relative;
+  overflow: hidden;
+}
+.ph-tile .init {
+  position: absolute;
+  left: 24px;
+  top: 16px;
+  font-size: clamp(3.4rem, 7vw, 5.4rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+.ph-tile svg { position: absolute; right: 20px; bottom: 20px; width: 62px; height: 62px; opacity: 0.14; }
 
 /* ---------- contact ---------- */
 
