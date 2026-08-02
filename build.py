@@ -418,7 +418,7 @@ index_body = f"""
 <main>
   <section class="hero wrap">
     <span class="label"><b>Ísdal</b> — Arkitektúr &amp; innanhússhönnun</span>
-    <h1 class="display">Rými sem eiga rætur í&nbsp;stað, fólki, og&nbsp;gæðum</h1>
+    <h1 class="display">Rými sem eiga rætur í&nbsp;stað, birtu, og&nbsp;fólki</h1>
     <div class="hero-grid">
       <div>
         <p class="lede">Ísdal er arkitekta- og hönnunarstofa í Reykjavík sem vinnur þvert á arkitektúr og innanhússhönnun. Með yfir tuttugu ára reynslu af heimilum, skrifstofum og almenningsbyggingum fylgjum við verkefnum alla leið — frá fyrstu skissu að byggingarleyfi og fullbúnu rými.</p>
