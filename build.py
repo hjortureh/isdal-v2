@@ -27,7 +27,9 @@ MBL_MOSFELLSBAER = "https://www.mbl.is/smartland/heimili/2025/02/23/bogadreginn_
 DISTRICTHIVE = "https://districthive.com/prospectus_iceland.html"
 
 
-def head(title, desc, p, url):
+def head(title, desc, p, url, image=None, image_alt=None):
+    image = image or OG_IMAGE
+    image_alt = image_alt or "ÍSDAL — Architecture &amp; Interior"
     return f"""<!DOCTYPE html>
 <html lang="is">
 <head>
@@ -42,10 +44,10 @@ def head(title, desc, p, url):
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="{OG_IMAGE}">
+<meta property="og:image" content="{image}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="ÍSDAL — Architecture &amp; Interior">
+<meta property="og:image:alt" content="{image_alt}">
 <meta property="og:locale" content="is_IS">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="{FAVICON}">
@@ -125,9 +127,9 @@ def footer(p):
 </html>"""
 
 
-def page(filename, title, desc, current, body, p=""):
+def page(filename, title, desc, current, body, p="", image=None, image_alt=None):
     url = SITE + ("/" if filename == "index.html" else "/" + filename)
-    html = head(title, desc, p, url) + header(p, current) + body + footer(p)
+    html = head(title, desc, p, url, image, image_alt) + header(p, current) + body + footer(p)
     path = os.path.join(ROOT, filename)
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -641,6 +643,8 @@ for i, pr in enumerate(PROJECTS):
         "verkefni",
         detail_body,
         p="../",
+        image=f"{SITE}/assets/img/og/{pr['slug']}.jpg",
+        image_alt=pr["title"],
     )
 
 # ------------------------------------------------------------------

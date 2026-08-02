@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
-"""Generate the social share cover image (assets/img/og-cover.png, 1200x630).
+"""Generate the social share images.
+
+- assets/img/og-cover.png (1200x630): main cover, used site-wide
+- assets/img/og/<slug>.jpg (1200x630): one per project, from its card image
 
 Needs Pillow. Downloads the Archivo font into .fonts-cache/ on first run.
 Run:  python3 make_cover.py
 """
 
 import os
+import re
 import urllib.request
 
 from PIL import Image, ImageDraw, ImageFont
@@ -92,5 +96,32 @@ def main():
     print("wrote", os.path.relpath(OUT, ROOT), f"({os.path.getsize(OUT) // 1024} KB)")
 
 
+def cover_crop(src, w=W, h=H):
+    img = Image.open(src).convert("RGB")
+    scale = max(w / img.width, h / img.height)
+    img = img.resize((round(img.width * scale), round(img.height * scale)))
+    left = (img.width - w) // 2
+    top = (img.height - h) // 2
+    return img.crop((left, top, left + w, top + h))
+
+
+def project_covers():
+    """One 1200x630 JPG per project, cropped from its card image.
+
+    Reads slug/card pairs straight out of build.py so the two stay in sync
+    (PROJECTS entries come before TEAM entries, and only they have "card").
+    """
+    src = open(os.path.join(ROOT, "build.py"), encoding="utf-8").read()
+    slugs = re.findall(r'"slug": "([^"]+)"', src)
+    cards = re.findall(r'"card": "([^"]+)"', src)
+    out_dir = os.path.join(ROOT, "assets", "img", "og")
+    os.makedirs(out_dir, exist_ok=True)
+    for slug, card in zip(slugs, cards):
+        out = os.path.join(out_dir, f"{slug}.jpg")
+        cover_crop(os.path.join(ROOT, "assets", "img", card)).save(out, "JPEG", quality=82)
+        print("wrote", os.path.relpath(out, ROOT), f"({os.path.getsize(out) // 1024} KB)")
+
+
 if __name__ == "__main__":
     main()
+    project_covers()
