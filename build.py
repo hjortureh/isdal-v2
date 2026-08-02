@@ -110,9 +110,9 @@ def footer(p):
       <div>
         <span class="label">Hafa samband</span>
         <ul>
-          <li><a href="mailto:info@isdal.is">info@isdal.is</a></li>
           <li>Austurstræti 12a</li>
           <li>101 Reykjavík, Ísland</li>
+          <li><a href="mailto:info@isdal.is">info@isdal.is</a></li>
         </ul>
       </div>
     </div>
@@ -516,7 +516,7 @@ index_body = f"""
 <section class="cta-band">
   <div class="wrap">
     <span class="label">05 — <b>Hafa samband</b></span>
-    <h2>Með verkefni í&nbsp;huga? Ekki hika við að hafa samband og við getum rætt málin saman&nbsp;☕</h2>
+    <h2>Með verkefni í&nbsp;huga? Ekki hika við að hafa samband og við ræðum málin saman&nbsp;☕</h2>
     <a class="alink" href="hafa-samband.html">Hafa samband</a>
   </div>
 </section>
