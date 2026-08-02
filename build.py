@@ -655,6 +655,7 @@ TEAM = [
     {
         "slug": "hildur",
         "name": "Hildur Ísdal Þorgeirsdóttir",
+        "short": "Hildur Ísdal",
         "role": "Stofnandi — Arkitekt &amp; innanhússhönnuður",
         "img": "hildur.webp",
         "init": "H",
@@ -675,6 +676,7 @@ TEAM = [
     {
         "slug": "dagny",
         "name": "Dagný Björt Benjamínsdóttir",
+        "short": "Dagný Björt",
         "role": "Innanhússarkitekt",
         "img": None,
         "init": "D",
@@ -771,7 +773,7 @@ def tcard(person):
     return f"""
         <a class="tcard reveal" href="folk/{person['slug']}.html">
           {ph}
-          <div class="meta"><b>{person['name']}</b><span>{person['role']}</span></div>
+          <div class="meta"><b>{person.get('short', person['name'])}</b><span>{person['role']}</span></div>
         </a>"""
 
 
