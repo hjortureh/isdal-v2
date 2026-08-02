@@ -51,7 +51,7 @@ def header(p, current):
     <a class="logo" href="{p}index.html" aria-label="ÍSDAL — forsíða">
       {WEDGE.format(s=26)}
       <span class="word">ÍSDAL</span>
-      <span class="tag">Arkitektur<br>&amp; Interior</span>
+      <span class="tag">Architecture<br>&amp; Interior</span>
     </a>
     <button class="menu-btn" aria-expanded="false" aria-controls="nav">Valmynd</button>
     <nav class="site-nav" id="nav">
@@ -100,7 +100,7 @@ def footer(p):
     </div>
     <div class="footer-mark">
       <div class="word">ÍSDAL</div>
-      <div class="fine">© 2026 Ísdal ehf.<br>Arkitektur &amp; Interior</div>
+      <div class="fine">© 2026 Ísdal ehf.<br>Architecture &amp; Interior</div>
     </div>
   </div>
 </footer>
@@ -434,6 +434,11 @@ index_body = f"""
         </div>
         <div class="service-row reveal">
           <span class="num">/03</span>
+          <h3>Vinnustaðir</h3>
+          <p>Skrifstofur, mötuneyti og sérhæfð vinnurými. Greining á þörfum, rýmisskipulag og hönnun sem styður ólíkar vinnustundir dagsins.</p>
+        </div>
+        <div class="service-row reveal">
+          <span class="num">/04</span>
           <h3>Byggingarleyfi &amp; ráðgjöf</h3>
           <p>Aðaluppdrættir, byggingarleyfisumsóknir og samskipti við byggingarfulltrúa — við þekkjum ferlið og styttum leiðina.</p>
         </div>
@@ -469,8 +474,8 @@ index_body = f"""
           <span class="arrow">→</span>
         </a>
         <a class="news-item reveal" href="frettir.html">
-          <time datetime="2026-02-12">12.02.2026</time>
-          <h3>Dagný innanhúsarkitekt hefur störf hjá Ísdal</h3>
+          <time datetime="2026-03-10">10.03.2026</time>
+          <h3>Ísdal opnar vinnustofu á Austurstræti 12a</h3>
           <span class="arrow">→</span>
         </a>
       </div>
@@ -637,14 +642,21 @@ TEAM = [
     },
     {
         "slug": "dagny",
-        "name": "Dagný",
-        "role": "Innanhúsarkitekt",
+        "name": "Dagný Björt Benjamínsdóttir",
+        "role": "Innanhússarkitekt",
         "img": None,
         "init": "D",
         "paras": [
-            "Dagný er innanhúsarkitekt og gekk til liðs við Ísdal í febrúar 2026. Hún vinnur að innanhússverkefnum stofunnar — innréttingum, efnisvali og lýsingu — og fylgir sérsmíði eftir frá teikningu að uppsetningu.",
+            "Dagný Björt er innanhússarkitekt með BA-gráðu frá IED í Barselóna og gekk til liðs við Ísdal haustið 2025. Hún er alin upp á Íslandi og sækir innblástur jafnt í íslenska náttúru og skandinavíska hönnunarhefð.",
+            "Áður starfaði hún við eldhús- og innréttingahönnun hjá JKE Design, sem hönnunarráðgjafi hjá Módern og í starfsnámi hjá Fundació Enric Miralles í Barselóna. Hjá Ísdal vinnur hún að innanhússverkefnum stofunnar — innréttingum, efnisvali og lýsingu — og fylgir sérsmíði eftir frá teikningu að uppsetningu.",
         ],
-        "cv": [],
+        "cv": [
+            ("2025–", "Ísdal — innanhússarkitekt, Reykjavík"),
+            ("2024–26", "Módern — hönnunarráðgjafi, Reykjavík"),
+            ("2023", "Fundació Enric Miralles, Barselóna — starfsnám"),
+            ("2022–23", "JKE Design — innanhússhönnuður"),
+            ("Menntun", "BA í innanhússhönnun — IED Istituto Europeo di Design, Barselóna"),
+        ],
     },
     {
         "slug": "sara",
@@ -748,7 +760,7 @@ um_body = f"""
         <div>
           <div class="studio-strip vert">
             <div><span class="big">20+</span><span class="label">Ára reynsla</span></div>
-            <div><span class="big">20+</span><span class="label">Verkefni unnin</span></div>
+            <div><span class="big">15+</span><span class="label">Verkefni kláruð</span></div>
           </div>
         </div>
         <div class="detail-body">
@@ -825,13 +837,6 @@ frettir_body = f"""
             <p>Stofan hefur komið sér fyrir í bjartri vinnustofu á Austurstræti 12a, 101 Reykjavík. Kaffið er alltaf heitt — kíktu í heimsókn ef þú ert með verkefni í huga.</p>
           </div>
         </div>
-        <div class="news-item reveal">
-          <time datetime="2026-02-12">12.02.2026</time>
-          <div>
-            <h3>Dagný innanhúsarkitekt hefur störf hjá Ísdal</h3>
-            <p>Dagný innanhúsarkitekt hóf störf hjá stofunni í febrúar og styrkir innanhússteymið — innréttingar, efnisval og lýsingu í verkefnum stofunnar.</p>
-          </div>
-        </div>
         <a class="news-item reveal" href="{MBL_LAUGARDALUR}" target="_blank" rel="noopener">
           <time datetime="2025-11-18">18.11.2025</time>
           <div>
@@ -840,6 +845,13 @@ frettir_body = f"""
           </div>
           <span class="arrow">↗</span>
         </a>
+        <div class="news-item reveal">
+          <time datetime="2025-10-20">20.10.2025</time>
+          <div>
+            <h3>Dagný Björt innanhússarkitekt hefur störf hjá Ísdal</h3>
+            <p>Dagný Björt Benjamínsdóttir innanhússarkitekt hóf störf hjá stofunni í október og styrkir innanhússteymið — innréttingar, efnisval og lýsingu í verkefnum stofunnar.</p>
+          </div>
+        </div>
         <a class="news-item reveal" href="{MBL_MOSFELLSBAER}" target="_blank" rel="noopener">
           <time datetime="2025-02-23">23.02.2025</time>
           <div>

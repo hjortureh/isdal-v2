@@ -38,7 +38,7 @@ python3 -m http.server 8737
 ## Notes / placeholders to replace before launch
 
 - Email `info@isdal.is` is a guess — confirm the real address.
-- Dagný and Sara: surnames, photos, and real bios needed (placeholder tiles + drafted text).
+- Dagný Björt: photo needed (bio/CV from LinkedIn). Sara: surname, photo, and real bio needed.
 - RVK Studios and "Fjölbýli með inngarði" are marked "unnið fyrir stofnun Ísdal" —
   confirm which stofa/context they belong to.
 - Some project facts (years, the fjölbýli proposal itself) are drafted and need Hildur's review.
