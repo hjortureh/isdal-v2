@@ -500,7 +500,7 @@ index_body = f"""
         </a>
         <a class="news-item reveal" href="frettir.html">
           <time datetime="2026-06-15">15.06.2026</time>
-          <h3>Sara innanhússhönnuður gengur til liðs við stofuna</h3>
+          <h3>Sara arkitekt gengur til liðs við stofuna</h3>
           <span class="arrow">→</span>
         </a>
         <a class="news-item reveal" href="frettir.html">
@@ -693,11 +693,11 @@ TEAM = [
     {
         "slug": "sara",
         "name": "Sara",
-        "role": "Innanhússhönnuður",
+        "role": "Arkitekt",
         "img": None,
         "init": "S",
         "paras": [
-            "Sara er innanhússhönnuður hjá Ísdal. Hún vinnur þvert á verkefni stofunnar að efnisvali, húsgögnum og framsetningu og heldur utan um efnissafn vinnustofunnar á Austurstræti.",
+            "Sara er arkitekt hjá Ísdal. Hún vinnur þvert á verkefni stofunnar — frá frumhugmynd og skipulagi að útfærslu og deiliteikningum — og fylgir verkefnum eftir í gegnum byggingarleyfisferlið.",
         ],
         "cv": [],
     },
@@ -858,8 +858,8 @@ frettir_body = f"""
         <div class="news-item reveal">
           <time datetime="2026-06-15">15.06.2026</time>
           <div>
-            <h3>Sara innanhússhönnuður gengur til liðs við stofuna</h3>
-            <p>Við bjóðum Söru innanhússhönnuð velkomna í teymið. Sara vinnur þvert á verkefni stofunnar að efnisvali, húsgögnum og framsetningu.</p>
+            <h3>Sara arkitekt gengur til liðs við stofuna</h3>
+            <p>Við bjóðum Söru arkitekt velkomna í teymið. Sara vinnur þvert á verkefni stofunnar, frá frumhugmynd að útfærslu og byggingarleyfi.</p>
           </div>
         </div>
         <div class="news-item reveal">
