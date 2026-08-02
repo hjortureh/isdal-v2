@@ -38,7 +38,7 @@ if (carousel) {
     dots.forEach((d, i) => d.classList.toggle('active', i === current));
   };
   const start = () => {
-    timer = setInterval(() => show(current + 1), 4500);
+    timer = setInterval(() => show(current + 1), 3200);
   };
   dots.forEach((d, i) =>
     d.addEventListener('click', () => {
