@@ -537,7 +537,7 @@ page(
 verkefni_body = f"""
 <main>
   <section class="page-head wrap">
-    <span class="label"><b>Verkefni</b> — {len(PROJECTS)} verk</span>
+    <span class="label"><b>Úrval</b> — {len(PROJECTS)} verk</span>
     <h1 class="display">Verkefni</h1>
     <p class="lede">Frá sumarhúsum og eldhúsum til kvikmyndavera og skóla fyrir þúsund nemendur.</p>
   </section>
