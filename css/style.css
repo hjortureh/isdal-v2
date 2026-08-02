@@ -108,10 +108,11 @@ h1, h2, h3 { font-weight: 700; letter-spacing: -0.025em; line-height: 1.04; }
 
 .logo {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 10px;
   line-height: 1;
 }
+.logo svg { margin-bottom: 2px; }
 .logo svg { display: block; }
 .logo .word {
   font-size: 20px;
@@ -640,6 +641,16 @@ form.contact-form { display: grid; gap: 0; border-top: 1px solid var(--line-stro
   transition: background 0.2s ease, color 0.2s ease;
 }
 .contact-form button:hover { background: transparent; color: var(--ink); }
+
+.contact-foot {
+  margin-top: clamp(48px, 7vw, 88px);
+  padding-top: 18px;
+  border-top: 1px solid var(--line-strong);
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+.contact-foot a { border-bottom: 1px solid var(--line-strong); font-weight: 500; color: var(--ink); }
+.contact-foot a:hover { border-color: var(--ink); }
 
 /* ---------- reveal animation ---------- */
 

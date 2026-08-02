@@ -748,7 +748,7 @@ um_body = f"""
         <div>
           <div class="studio-strip vert">
             <div><span class="big">20+</span><span class="label">Ára reynsla</span></div>
-            <div><span class="big">101</span><span class="label">Austurstræti 12a, Reykjavík</span></div>
+            <div><span class="big">20+</span><span class="label">Verkefni unnin</span></div>
           </div>
         </div>
         <div class="detail-body">
@@ -819,24 +819,24 @@ frettir_body = f"""
           </div>
         </div>
         <div class="news-item reveal">
+          <time datetime="2026-03-10">10.03.2026</time>
+          <div>
+            <h3>Ísdal opnar vinnustofu á Austurstræti 12a</h3>
+            <p>Stofan hefur komið sér fyrir í bjartri vinnustofu á Austurstræti 12a, 101 Reykjavík. Kaffið er alltaf heitt — kíktu í heimsókn ef þú ert með verkefni í huga.</p>
+          </div>
+        </div>
+        <div class="news-item reveal">
           <time datetime="2026-02-12">12.02.2026</time>
           <div>
             <h3>Dagný innanhúsarkitekt hefur störf hjá Ísdal</h3>
             <p>Dagný innanhúsarkitekt hóf störf hjá stofunni í febrúar og styrkir innanhússteymið — innréttingar, efnisval og lýsingu í verkefnum stofunnar.</p>
           </div>
         </div>
-        <div class="news-item reveal">
-          <time datetime="2026-01-20">20.01.2026</time>
-          <div>
-            <h3>Ísdal opnar vinnustofu á Austurstræti 12a</h3>
-            <p>Stofan hefur komið sér fyrir í bjartri vinnustofu á Austurstræti 12a, 101 Reykjavík. Kaffið er alltaf heitt — kíktu í heimsókn ef þú ert með verkefni í huga.</p>
-          </div>
-        </div>
         <a class="news-item reveal" href="{MBL_LAUGARDALUR}" target="_blank" rel="noopener">
           <time datetime="2025-11-18">18.11.2025</time>
           <div>
             <h3>„Hildur hannaði stórkostlegt eldhús í Reykjavík“</h3>
-            <p>Smartland mbl.is fjallar um eldhúsið í Laugardal — hús frá 1985 eftir Kjartan Sveinsson þar sem upprunalegi bleiki marmarinn fékk að halda sér. Lesa umfjöllunina á mbl.is.</p>
+            <p>Morgunblaðið fjallar um eldhúsið í Laugardal — hús frá 1985 eftir Kjartan Sveinsson þar sem upprunalegi bleiki marmarinn fékk að halda sér. Lesa umfjöllunina á mbl.is.</p>
           </div>
           <span class="arrow">↗</span>
         </a>
@@ -844,7 +844,7 @@ frettir_body = f"""
           <time datetime="2025-02-23">23.02.2025</time>
           <div>
             <h3>„Bogadreginn tangi kom í staðinn fyrir eyju“</h3>
-            <p>Smartland mbl.is fjallar um eldhúsið í Mosfellsbæ þar sem bogadreginn tangi leysti eyjuna af hólmi — og ræðir við Hildi um heimkomuna og stofnun Ísdal. Lesa umfjöllunina á mbl.is.</p>
+            <p>Morgunblaðið fjallar um eldhúsið í Mosfellsbæ þar sem bogadreginn tangi leysti eyjuna af hólmi — og ræðir við Hildi um heimkomuna og stofnun Ísdal. Lesa umfjöllunina á mbl.is.</p>
           </div>
           <span class="arrow">↗</span>
         </a>
@@ -878,12 +878,11 @@ samband_body = f"""
       <div class="contact-grid">
         <div>
           <div class="contact-list">
-            <div class="row"><span class="k">Netfang</span><span class="v"><a href="mailto:info@isdal.is">info@isdal.is</a></span></div>
             <div class="row"><span class="k">Vinnustofa</span><span class="v">Austurstræti 12a<br>101 Reykjavík, Ísland</span></div>
             <div class="row"><span class="k">Instagram</span><span class="v"><a href="{INSTAGRAM}" target="_blank" rel="noopener">@hildur_isdal</a></span></div>
             <div class="row"><span class="k">LinkedIn</span><span class="v"><a href="{LINKEDIN}" target="_blank" rel="noopener">Hildur Ísdal</a></span></div>
           </div>
-          <p class="muted" style="margin-top:28px; max-width:36em;">Við svörum fyrirspurnum að jafnaði innan tveggja virkra daga. Ef verkefnið þolir enga bið má líka finna okkur á vinnustofunni á Austurstræti 12a í miðborginni.</p>
+          <p class="muted" style="margin-top:28px; max-width:36em;">Við svörum fyrirspurnum að jafnaði innan tveggja virkra daga.</p>
         </div>
         <form class="contact-form" novalidate>
           <div class="field">
@@ -901,6 +900,7 @@ samband_body = f"""
           <button type="submit">Senda fyrirspurn</button>
         </form>
       </div>
+      <p class="contact-foot">Viltu frekar senda tölvupóst? Netfangið okkar er <a href="mailto:info@isdal.is">info@isdal.is</a>.</p>
     </div>
   </section>
 </main>
