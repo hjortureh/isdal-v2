@@ -927,8 +927,8 @@ samband_body = f"""
             <div class="row"><span class="k">Vinnustofa</span><span class="v">Austurstræti 12a<br>101 Reykjavík, Ísland</span></div>
             <div class="row"><span class="k">Instagram</span><span class="v"><a href="{INSTAGRAM}" target="_blank" rel="noopener">@isdal_arkitektur</a></span></div>
             <div class="row"><span class="k">LinkedIn</span><span class="v"><a href="{LINKEDIN}" target="_blank" rel="noopener">Ísdal arkitektúr &amp; innanhússhönnun</a></span></div>
+            <div class="row"><span class="k">Netfang</span><span class="v"><a href="mailto:info@isdal.is">info@isdal.is</a></span></div>
           </div>
-          <p class="muted" style="margin-top:28px; max-width:36em;">Við svörum fyrirspurnum að jafnaði innan tveggja virkra daga.</p>
         </div>
         <form class="contact-form" novalidate>
           <div class="field">
@@ -946,7 +946,6 @@ samband_body = f"""
           <button type="submit">Senda fyrirspurn</button>
         </form>
       </div>
-      <p class="contact-foot">Viltu frekar senda tölvupóst? Netfangið okkar er <a href="mailto:info@isdal.is">info@isdal.is</a>.</p>
     </div>
   </section>
 </main>
