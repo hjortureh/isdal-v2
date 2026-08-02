@@ -386,6 +386,15 @@ def pcard(pr, p, eager=False):
 
 featured = PROJECTS[:4]
 
+hero_slides = "".join(
+    f'\n        <img class="slide{" is-active" if i == 0 else ""}" src="assets/img/{pr["card"]}" alt="{pr["title"]}"{"" if i == 0 else " loading=\"lazy\""}>'
+    for i, pr in enumerate(featured)
+)
+hero_dots = "".join(
+    f'\n        <button type="button"{" class=\"active\"" if i == 0 else ""} aria-label="Mynd {i + 1} — {pr["title"]}"></button>'
+    for i, pr in enumerate(featured)
+)
+
 index_body = f"""
 <main>
   <section class="hero wrap">
@@ -397,10 +406,12 @@ index_body = f"""
         <br>
         <a class="alink" href="verkefni.html">Skoða verkefnin</a>
       </div>
-      <figure class="plate hero-fig reveal">
-        <img src="assets/img/geysir-1.webp" alt="Sumarhús við Geysi að vetri undir norðurljósum">
-        <figcaption><span>Verk 01 — <b>Sumarhús við Geysi</b></span><span>Í byggingu</span></figcaption>
-      </figure>
+      <div class="hero-carousel reveal" aria-label="Verkefni Ísdal">
+        <div class="slides">{hero_slides}
+        </div>
+        <div class="dots" role="group" aria-label="Velja mynd">{hero_dots}
+        </div>
+      </div>
     </div>
   </section>
 

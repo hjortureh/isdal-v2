@@ -4,8 +4,8 @@
     {
       "name": "isdal",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8737"],
-      "port": 8737
+      "runtimeArgs": ["-m", "http.server", "8739"],
+      "port": 8739
     }
   ]
 }
