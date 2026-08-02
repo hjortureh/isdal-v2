@@ -25,6 +25,31 @@ const io = new IntersectionObserver(
 );
 document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 
+// hero carousel (front page)
+const carousel = document.querySelector('.hero-carousel');
+if (carousel) {
+  const slides = carousel.querySelectorAll('.slide');
+  const dots = carousel.querySelectorAll('.dots button');
+  let current = 0;
+  let timer;
+  const show = (n) => {
+    current = (n + slides.length) % slides.length;
+    slides.forEach((s, i) => s.classList.toggle('is-active', i === current));
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  };
+  const start = () => {
+    timer = setInterval(() => show(current + 1), 4500);
+  };
+  dots.forEach((d, i) =>
+    d.addEventListener('click', () => {
+      clearInterval(timer);
+      show(i);
+      start();
+    })
+  );
+  start();
+}
+
 // project filter (verkefni page)
 const filterbar = document.querySelector('.filterbar');
 if (filterbar) {
